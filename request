@@ -1,0 +1,124 @@
+GET http://localhost/ping HTTP/1.1
+
+###
+
+POST http://localhost/register HTTP/1.1
+content-type: application/json
+
+{
+	"Email": "soumeya@gmail.com",
+	"Password": "password"
+}
+####
+
+POST http://localhost/login HTTP/1.1
+content-type: application/json
+
+{
+	"Email": "soumeya@gmail.com",
+	"Password": "password"
+}
+
+###
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvdW1leWFAZ21haWwuY29tIiwiZXhwIjoxNjAzNjQ3NDI0LCJ1c2VySWQiOiIxIn0.fko4ISF6fQiDiQcnItlmvbwKkv8VXX-rN9rM6TM0miM
+
+###
+
+GET http://localhost/level HTTP/1.1
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/profile HTTP/1.1
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/profile/35 HTTP/1.1
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/profile/avatar HTTP/1.1
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/avatars HTTP/1.1
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/profile/title HTTP/1.1
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/titles HTTP/1.1
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/action HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+	"title": "Total login days"
+}
+
+###
+
+PUT http://localhost/profile HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+	"username": "Soumsoum",
+	"firstname": "Soumeya",
+	"lastname": "Heniche",
+	"location": "France",
+  	"school": "ETNA - School",
+  	"about": "Im a teacher"
+}
+
+###
+
+PUT http://localhost/profile/avatar=1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+POST http://localhost/action/done HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+	"actionTitle": "Total login days"
+}
+
+###
+
+GET http://localhost/profile/avatars HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/profile/titles HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/profile/actions HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost/actions HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
